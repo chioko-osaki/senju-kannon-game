@@ -12,13 +12,13 @@
 <body class="game-page">
 <div id="app">
   <div id="hud" class="hidden">
-    <div class="hud-box"><span class="hud-label">のこり</span><span id="timer">42</span></div>
+    <div class="hud-box"><span class="hud-label">のこり時間</span><span id="timer">42</span>秒</div>
     <button class="hud-btn" id="abort-btn">中断して<br>最初にもどる</button>
   </div>
 
   <div id="demo-hud" class="hidden">
-    <div class="demo-badge">デモモード</div>
-    <button class="btn demo-exit-btn" id="demo-exit-btn">デモモードを<br>終了してもどる</button>
+    <div class="demo-badge">れんしゅうモード</div>
+    <button class="btn demo-exit-btn" id="demo-exit-btn">れんしゅうモードを<br>終了してもどる</button>
   </div>
 
   <div id="score-display" class="hidden">
@@ -28,18 +28,18 @@
 
   <div id="stage">
     <div id="midline"></div>
-    <div class="zone-hint" id="hint-left">🫱 左半分だけ動く</div>
-    <div class="zone-hint" id="hint-right">🫲 右半分だけ動く</div>
+    <div class="zone-hint" id="hint-left"><span class="emoji-rot emoji-rot-left">🫱</span> 左半分だけ動く</div>
+    <div class="zone-hint" id="hint-right"><span class="emoji-rot emoji-rot-right">🫲</span> 右半分だけ動く</div>
     <div class="hand" id="hand-left">🫱</div>
     <div class="hand" id="hand-right">🫲</div>
   </div>
 
   <!-- TOP画面 -->
   <div class="overlay" id="start-screen">
-    <div class="big-emoji-row"><span class="emoji-rot emoji-rot-left">🫱</span>😟<span class="emoji-rot emoji-rot-right">🫲</span></div>
+    <div class="big-emoji-row">🥺<br>✨<span class="emoji-rot emoji-rot-left">🫱</span><span class="emoji-rot emoji-rot-right">🫲</span>✨</div>
     <h1>困っている人を救え！千手観音ゲーム</h1>
     <div class="sub">
-      困っている人 😟 を、千手観音の手ですくって救おう。<br>
+      困っている人 🥺 を、千手観音の手で救いましょう！<br>
       くわしい遊び方は「あそびかた」で確認できます。
     </div>
     <div class="menu-buttons">
@@ -74,7 +74,7 @@
       <input type="text" id="name-input" maxlength="10" placeholder="なまえ(10文字まで)">
       <button class="btn save-btn" id="save-score-btn">保存</button>
     </div>
-    <div class="save-note hidden" id="save-note">保存しました!</div>
+    <div class="save-note hidden" id="save-note">保存しました！</div>
     <button class="btn btn-secondary" id="retry-btn">最初にもどる</button>
   </div>
 
