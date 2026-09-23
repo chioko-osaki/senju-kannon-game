@@ -198,7 +198,7 @@
     } else if (r < GAME_CONFIG.lotusChance + GAME_CONFIG.devilChance) {
       type = 'devil'; glyph = '😈'; extraClass = ' target-devil';
     } else {
-      type = 'sad'; glyph = '😟'; extraClass = '';
+      type = 'sad'; glyph = '🥺'; extraClass = '';
     }
     const el = document.createElement('div');
     el.className = 'target' + extraClass;
@@ -244,7 +244,7 @@
           score++;
           scoreEl.textContent = score;
         }
-        t.el.textContent = '😊';
+        t.el.textContent = '😄';
         t.el.classList.add('caught');
         pulseHand(handEl);
         playSound('catch');
