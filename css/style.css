@@ -224,18 +224,20 @@ body.game-page{
   bottom:8%;
   font-size:3rem;
   line-height:1;
-  transform:translate(-50%,0) rotate(var(--rot, 0deg));
+  /* 右手も左手も同じ🫲の絵文字を使い、右手はそのまま回転、
+     左手は左右反転(scaleX)してから回転することで、
+     絵文字の種類によるデザインの違い(端末差)を避けている */
+  transform:translate(-50%,0) scaleX(var(--flip, 1)) rotate(90deg);
   filter:drop-shadow(0 4px 8px rgba(0,0,0,0.5));
   transition:left 0.05s linear;
 }
-#hand-left{ --rot: -90deg; }
-#hand-right{ --rot: 90deg; }
+#hand-left{ --flip: -1; }
 .hand.catch-pulse{
   animation:pulse 0.25s ease-out;
 }
 @keyframes pulse{
-  0%{transform:translate(-50%,0) rotate(var(--rot,0deg)) scale(1.3);}
-  100%{transform:translate(-50%,0) rotate(var(--rot,0deg)) scale(1);}
+  0%{transform:translate(-50%,0) scaleX(var(--flip,1)) rotate(90deg) scale(1.3);}
+  100%{transform:translate(-50%,0) scaleX(var(--flip,1)) rotate(90deg) scale(1);}
 }
 .hand.numb{
   filter:grayscale(0.85) brightness(0.65) drop-shadow(0 0 10px rgba(60,60,90,0.7));
@@ -420,10 +422,9 @@ body.game-page{
    (左手位置=🫱を反時計回り / 右手位置=🫲を時計回り) */
 .emoji-rot{
   display:inline-block;
-  transform:rotate(var(--rot, 0deg));
+  transform:scaleX(var(--flip, 1)) rotate(90deg);
 }
-.emoji-rot-left{ --rot: -90deg; }
-.emoji-rot-right{ --rot: 90deg; }
+.emoji-rot-left{ --flip: -1; }
 
 /* ---- 音源クレジット(TOP画面下部・控えめに表示) ---- */
 .credit-row{
