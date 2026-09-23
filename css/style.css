@@ -247,6 +247,13 @@ body.game-page{
   75%{ margin-left:3px; }
 }
 
+.emoji-rot{
+  display:inline-block;
+  transform:rotate(var(--rot, 0deg));
+}
+.emoji-rot-left{ --rot: 90deg; }
+.emoji-rot-right{ --rot: -90deg; }
+
 .zone-hint{
   position:absolute;
   bottom:2%;
