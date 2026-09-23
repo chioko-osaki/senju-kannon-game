@@ -228,8 +228,8 @@ body.game-page{
   filter:drop-shadow(0 4px 8px rgba(0,0,0,0.5));
   transition:left 0.05s linear;
 }
-#hand-left{ --rot: 90deg; }
-#hand-right{ --rot: -90deg; }
+#hand-left{ --rot: -90deg; }
+#hand-right{ --rot: 90deg; }
 .hand.catch-pulse{
   animation:pulse 0.25s ease-out;
 }
@@ -246,13 +246,6 @@ body.game-page{
   25%{ margin-left:-3px; }
   75%{ margin-left:3px; }
 }
-
-.emoji-rot{
-  display:inline-block;
-  transform:rotate(var(--rot, 0deg));
-}
-.emoji-rot-left{ --rot: 90deg; }
-.emoji-rot-right{ --rot: -90deg; }
 
 .zone-hint{
   position:absolute;
@@ -422,6 +415,15 @@ body.game-page{
 }
 
 .hidden{display:none !important;}
+
+/* 🫱🫲を手のひらとして表示するための共通クラス
+   (左手位置=🫱を反時計回り / 右手位置=🫲を時計回り) */
+.emoji-rot{
+  display:inline-block;
+  transform:rotate(var(--rot, 0deg));
+}
+.emoji-rot-left{ --rot: -90deg; }
+.emoji-rot-right{ --rot: 90deg; }
 
 /* ---- 音源クレジット(TOP画面下部・控えめに表示) ---- */
 .credit-row{
