@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>手で救え!千手観音</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+<div id="app">
+  <div id="hud" class="hidden">
+    <div class="hud-box"><span class="hud-label">のこり</span><span id="timer">42</span></div>
+    <button class="hud-btn" id="abort-btn">中断して<br>最初にもどる</button>
+  </div>
+
+  <div id="demo-hud" class="hidden">
+    <div class="demo-badge">デモモード</div>
+    <button class="btn demo-exit-btn" id="demo-exit-btn">デモモードを<br>終了してもどる</button>
+  </div>
+
+  <div id="score-display" class="hidden">
+    <span class="score-label">救った人数</span>
+    <span id="score">0</span>
+  </div>
+
+  <div id="stage">
+    <div id="midline"></div>
+    <div class="zone-hint" id="hint-left">🫲 左半分だけ動く</div>
+    <div class="zone-hint" id="hint-right">🫱 右半分だけ動く</div>
+    <div class="hand" id="hand-left">🫲</div>
+    <div class="hand" id="hand-right">🫱</div>
+  </div>
+
+  <!-- TOP画面 -->
+  <div class="overlay" id="start-screen">
+    <div class="big-emoji-row">🫲😟🫱</div>
+    <h1>手で救え!千手観音</h1>
+    <div class="sub">
+      落ちてくる 😟 を、千手観音の手ですくって救おう。<br>
+      くわしい遊び方は「あそびかた」で確認できます。
+    </div>
+    <div class="menu-buttons">
+      <button class="btn" id="start-btn">はじめる</button>
+      <button class="btn btn-secondary" id="demo-btn">デモモード(操作練習)</button>
+      <a class="btn btn-secondary" href="how-to-play.html">あそびかた</a>
+      <button class="btn btn-secondary" id="score-btn">スコア確認</button>
+    </div>
+  </div>
+
+  <!-- 結果画面 -->
+  <div class="overlay hidden" id="end-screen">
+    <div class="result-score" id="final-score">0</div>
+    <div class="result-label">人を救いました</div>
+    <div class="lore">
+      実際の千手観音坐像には、合掌する2本以外に40本の手があり、
+      それぞれが25の世界を救うと言われています。<br>
+      40 × 25 = 1000 ―― これが「千手」の由来です。<br>
+      会場の本物の千手観音坐像も、ぜひ見てみてください。
+    </div>
+    <div class="save-score-row">
+      <input type="text" id="name-input" maxlength="10" placeholder="なまえ(10文字まで)">
+      <button class="btn save-btn" id="save-score-btn">保存</button>
+    </div>
+    <div class="save-note hidden" id="save-note">保存しました!</div>
+    <button class="btn btn-secondary" id="retry-btn">最初にもどる</button>
+  </div>
+
+  <!-- スコア確認画面 -->
+  <div class="overlay hidden" id="score-screen">
+    <h1>スコアランキング</h1>
+    <div class="sub">この端末のブラウザに保存された記録です</div>
+    <ol class="score-list hidden" id="score-list"></ol>
+    <div class="score-empty hidden" id="score-empty">まだ記録がありません</div>
+    <button class="btn" id="score-close-btn">もどる</button>
+    <button class="link-small" id="clear-scores-btn">記録を全部消す</button>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

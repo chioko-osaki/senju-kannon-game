@@ -1,0 +1,10 @@
+{
+  "gameSeconds": 42,
+  "spawnIntervalMs": 650,
+  "fallSpeedPxPerSec": 150,
+  "catchRadiusPx": 46,
+  "devilChance": 0.25,
+  "lotusChance": 0.03,
+  "numbMs": 1000,
+  "lotusBonus": 10
+}
